@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>毛小孩の家 - 寵物美容工作室</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #f28b50;
+      --primary-light: #fff5ee;
+      --secondary: #6cb09a;
+      --accent: #f8c291;
+      --text-dark: #333333;
+      --text-muted: #666666;
+      --bg-light: #faf7f2;
+      --card-bg: #ffffff;
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+      padding: 0;
+    }
+
+    /* 頂部 Header & 介紹 */
+    header {
+      background: linear-gradient(135deg, #ffeedd 0%, #ffe0cc 100%);
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+      border-bottom: 3px dashed var(--accent);
+    }
+
+    .brand-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #b85d19;
+      margin-bottom: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .subtitle-badge {
+      display: inline-block;
+      background-color: var(--secondary);
+      color: white;
+      font-size: 0.95rem;
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .header-content {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      color: #4a4a4a;
+    }
+
+    .intro-paragraph {
+      margin-bottom: 1.25rem;
+    }
+
+    .features-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .feature-item {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #ffd8be;
+      border-radius: 12px;
+      padding: 0.5rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #8c4a17;
+    }
+
+    /* 資訊小卡 (電話、營業時間) */
+    .info-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 1rem 1.4rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-align: left;
+      flex: 1 1 260px;
+      max-width: 320px;
+    }
+
+    .info-icon {
+      font-size: 1.6rem;
+      color: var(--primary);
+    }
+
+    .info-card h4 {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .info-card p {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .info-card a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* 主容器 */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.75rem;
+      color: #444;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+      margin: 0.5rem auto 0;
+    }
+
+    /* 中間區域：價目表 & 美容作品照 */
+    .grid-two-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.25rem;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .image-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
+
+    .responsive-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* 下方區域：美容後照護 */
+    .care-section {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .care-img-container {
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    /* 頁尾 */
+    footer {
+      background-color: #f0eae1;
+      text-align: center;
+      padding: 1.75rem 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 3rem;
+    }
+
+    /* RWD 手機版適配 */
+    @media (max-width: 768px) {
+      header {
+        padding: 2.25rem 1rem 1.75rem;
+      }
+
+      .brand-title {
+        font-size: 1.9rem;
+      }
+
+      .grid-two-cols {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .container {
+        padding: 1.75rem 1rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .care-section {
+        padding: 1.5rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 最上方：店名與介紹 -->
+  <header>
+    <h1 class="brand-title">🐾 毛小孩の家</h1>
+    <div>
+      <span class="subtitle-badge">寵物美容工作室</span>
+    </div>
+    
+    <div class="header-content">
+      <p class="intro-paragraph">
+        我們是一間開在住宅區的小型寵物美容工作室，一次只接一隻，不關籠、不趕時間。<br>
+        怕生、年紀大、第一次美容的毛孩，都可以慢慢來。
+      </p>
+
+      <div class="features-list">
+        <span class="feature-item">🐶 服務對象：小型犬、中大型犬、貓</span>
+        <span class="feature-item">✨ 特色：一對一美容</span>
+        <span class="feature-item">📷 特色：美容過程可拍照回報給飼主</span>
+      </div>
+
+      <!-- 聯絡與營業資訊 -->
+      <div class="info-boxes">
+        <div class="info-card">
+          <div class="info-icon">🕒</div>
+          <div>
+            <h4>營業時間</h4>
+            <p>週二至週日 10:00–19:00<br><small style="color: #b85d19; font-weight: 500;">週一公休</small></p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <div>
+            <h4>預約電話</h4>
+            <p><a href="tel:0900000000">0900-000-000</a></p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">💬</div>
+          <div>
+            <h4>LINE 官方帳號</h4>
+            <p>@maoxiaohai</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 中間：價目表 & 作品照 -->
+    <section>
+      <div class="grid-two-cols">
+        <!-- 價目表 -->
+        <article class="card">
+          <h2 class="card-title">📋 服務項目與價目表</h2>
+          <div class="image-wrapper">
+            <img src="price.png" alt="毛小孩の家 - 服務項目與價目表" class="responsive-img">
+          </div>
+        </article>
+
+        <!-- 美容作品照 -->
+        <article class="card">
+          <h2 class="card-title">🐶 美容作品照</h2>
+          <div class="image-wrapper">
+            <img src="photo.png" alt="毛小孩の家 - 美容作品照" class="responsive-img">
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 下方：美容後照護 -->
+    <section class="care-section">
+      <h2 class="section-title">美容後照護</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.25rem; font-size: 0.98rem;">
+        洗沐修毛後的貼心叮嚀，讓寶貝毛孩保持舒適與健康 ✨
+      </p>
+      <div class="care-img-container">
+        <img src="care.png" alt="毛小孩の家 - 美容後照護衛教卡" class="responsive-img">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 毛小孩の家 寵物美容工作室 | 一次一隻・不關籠・給毛孩最安心的呵護</p>
+  </footer>
+
+</body>
+</html>
